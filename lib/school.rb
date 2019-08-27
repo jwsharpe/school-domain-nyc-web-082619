@@ -3,7 +3,7 @@ class School
   attr_reader :roster, :name
   def initialize(name)
     @name = name
-    @roster = {}
+    @roster = Hash.new
   end
   
   def add_student(student_name, grade)
@@ -21,6 +21,6 @@ class School
   end
   
   def sort
-    @roster.map{|grade, names| [grade, @roster[grade].sort]}.to_h
+    @roster.map{|grade, names| [grade, names.sort]}.to_h
   end
 end
